@@ -1,6 +1,6 @@
 import React from 'react';
 import { GameState } from '../types/game';
-import { Trophy, ArrowRight, RotateCcw, ChevronLeft, Settings } from 'lucide-react';
+import { Trophy, ArrowRight, RotateCcw } from 'lucide-react';
 
 interface GameStatusProps {
   gameState: GameState;
@@ -12,15 +12,6 @@ const GameStatus: React.FC<GameStatusProps> = ({ gameState, onReset }) => {
 
   return (
     <div className="flex flex-col items-center gap-6 mb-8">
-      <div className="w-full flex justify-between items-center px-4">
-        <button className="p-2 rounded-lg bg-purple-900/30 border border-purple-500/30 hover:bg-purple-900/50 transition-all neon-box glow-hover">
-          <ChevronLeft className="w-6 h-6 text-purple-400" />
-        </button>
-        <button className="p-2 rounded-lg bg-purple-900/30 border border-purple-500/30 hover:bg-purple-900/50 transition-all neon-box glow-hover">
-          <Settings className="w-6 h-6 text-purple-400" />
-        </button>
-      </div>
-
       <div className="flex flex-col items-center gap-4">
         {winner ? (
           <div className="flex items-center gap-3 text-3xl font-bold animate-bounce neon-text">
@@ -74,6 +65,10 @@ const GameStatus: React.FC<GameStatusProps> = ({ gameState, onReset }) => {
         <RotateCcw size={18} />
         New Game
       </button>
+
+      <div className="text-sm text-purple-400/60 mt-2">
+        Made by Abd Elbasset Khattabi
+      </div>
     </div>
   );
 };
